@@ -5,12 +5,12 @@ const express = require("express")
 const server = express()
 
 //Routers
-// const EventsRouter = require("./events/events-router")
+const EventsRouter = require("./events/events-router")
 
 //Middleware
 //test
 server.use(express.json())
-// server.use("/api/events", EventsRouter)
+server.use("/api/events", EventsRouter)
 
 const PORT = process.env.PORT || 3333
 const HOST = process.env.HOST
