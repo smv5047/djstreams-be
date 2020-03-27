@@ -45,6 +45,7 @@ exports.up = async function(knex) {
             .inTable("artists")
             .onUpdate("CASCADE")
             .onDELETE("CASCADE")
+        table.primary(["event_id", "artist_id"])
     })
 }
 
