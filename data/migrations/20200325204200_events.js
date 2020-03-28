@@ -29,7 +29,6 @@ exports.up = async function(knex) {
             .unique()
     })
 
-    //TODO Join Table (then seeds, then test)
     knex.schema.createTable("event_artists", table => {
         table
             .integer("event_id")
