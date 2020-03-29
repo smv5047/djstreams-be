@@ -13,6 +13,8 @@ server.use(express.json())
 server.use("/api/events", EventsRouter)
 
 const PORT = process.env.PORT || 3333
+
+//updatr host
 const HOST = process.env.HOST
 
 server.get("/", (req, res) => {
