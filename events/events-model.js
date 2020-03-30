@@ -20,7 +20,7 @@ const add = async event => {
 
     const [id] = await db("events").insert(event)
     console.log(id)
-    return db("event")
+    return db("events")
         .where({ id })
         .returning("*")
 }
@@ -28,7 +28,7 @@ const add = async event => {
 //UPDATE
 
 function update(id, update) {
-    return db("event")
+    return db("events")
         .where({ id })
         .update({ update })
         .returning("*")
