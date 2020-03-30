@@ -13,10 +13,10 @@ function findById(id) {
 
 //CREATE
 
-const add = async event => {
-    const [id] = await db("events").insert(event)
-    console.log(id)
-    return findById(id)
+const add = event => {
+    db("events")
+        .insert(event)
+        .returning("*")
 }
 
 //UPDATE
