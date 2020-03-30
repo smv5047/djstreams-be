@@ -5,7 +5,7 @@ function find() {
     return db("events")
 }
 
-function findById(id) {
+const findById = id => {
     return db("events")
         .where({ id })
         .first()
@@ -20,9 +20,7 @@ const add = async event => {
 
     const [id] = await db("events").insert(event)
     console.log(id)
-    return db("events")
-        .where({ id })
-        .returning("*")
+    return findById(id)
 }
 
 //UPDATE
