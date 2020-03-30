@@ -7,7 +7,7 @@ function find() {
 
 function findById(id) {
     return db("events")
-        .where({ id })
+        .where(id)
         .first()
 }
 
