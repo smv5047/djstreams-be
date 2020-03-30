@@ -38,7 +38,7 @@ exports.up = async function(knex) {
             .onUpdate("CASCADE")
             .onDelete("CASCADE")
         table
-            .integer("audio_id")
+            .integer("artist_id")
             .notNullable()
             .references("id")
             .inTable("artists")
