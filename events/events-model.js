@@ -2,10 +2,11 @@ const db = require("../data/db-config")
 
 //CREATE
 
-function add(event) {
+async function add(event) {
+    const [id] = await db("events").insert(event)
     return db("events")
-        .insert({ event })
-        .returning("*")
+        .where({ id })
+        .first()
 }
 
 //READ
