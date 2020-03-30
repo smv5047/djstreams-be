@@ -42,7 +42,7 @@ router.get("/:id", (req, res) => {
 
 //Update
 
-router.put("/:id/event", (req, res) => {
+router.put("/:id", (req, res) => {
     const { id } = req.params
 
     events
@@ -57,7 +57,7 @@ router.put("/:id/event", (req, res) => {
 
 //DELETE
 
-router.delete("/:id/event", (req, res) => {
+router.delete("/:id", (req, res) => {
     const { id } = req.params
 
     events

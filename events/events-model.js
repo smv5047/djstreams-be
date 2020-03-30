@@ -1,13 +1,5 @@
 const db = require("../data/db-config")
 
-//CREATE
-
-const add = async event => {
-    const [id] = await db("events").insert(event)
-    console.log(id)
-    return findById(id)
-}
-
 //READ
 function find() {
     return db("events")
@@ -17,6 +9,14 @@ function findById(id) {
     return db("events")
         .where({ id })
         .first()
+}
+
+//CREATE
+
+const add = async event => {
+    const [id] = await db("events").insert(event)
+    console.log(id)
+    return findById(id)
 }
 
 //UPDATE
