@@ -5,15 +5,13 @@ const events = require("./events-model")
 
 //CREATE
 
-router.post("/", (req, res) => {
-    events
-        .add(req.body)
-        .then(event => {
-            res.json(event)
-        })
-        .catch(err => {
-            res.status(500).json({ message: "Failed to get events" })
-        })
+router.post("/", async (req, res, next) => {
+    try {
+        const event = await events.add(req.body)
+        res.status(201).json(event)
+    } catch (err) {
+        next(err)
+    }
 })
 
 //READ
