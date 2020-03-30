@@ -8,7 +8,7 @@ const events = require("./events-model")
 router.post("/", async (req, res, next) => {
     try {
         const event = await events.add(req.body)
-        res.status(201).json({ event })
+        res.status(201).json(event)
     } catch (err) {
         next(err)
     }
