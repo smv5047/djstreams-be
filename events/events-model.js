@@ -18,11 +18,10 @@ const add = async event => {
     //     .insert(event)
     //     .returning("*")
 
-    const [id] = await db("events")
+    const [event] = await db("events")
         .insert(event)
         .returning("*")
-    console.log(id)
-    return findById(id)
+    return event
 }
 
 //UPDATE

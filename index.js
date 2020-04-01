@@ -1,5 +1,6 @@
 const dotenv = require("dotenv").config()
 const express = require("express")
+const cors = require("cors")
 
 //Create a server instance
 const server = express()
@@ -9,6 +10,7 @@ const EventsRouter = require("./events/events-router")
 
 //Middleware
 //test
+server.use(cors())
 server.use(express.json())
 server.use("/api/events", EventsRouter)
 
