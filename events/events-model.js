@@ -18,10 +18,10 @@ const add = async event => {
     //     .insert(event)
     //     .returning("*")
 
-    const [event] = await db("events")
-        .insert(event)
+    const [ev] = await db("events")
+        .insert(ev)
         .returning("*")
-    return event
+    return ev
 }
 
 //UPDATE

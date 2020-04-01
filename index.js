@@ -9,7 +9,7 @@ const server = express()
 const EventsRouter = require("./events/events-router")
 
 //Middleware
-//test
+
 server.use(cors())
 server.use(express.json())
 server.use("/api/events", EventsRouter)
