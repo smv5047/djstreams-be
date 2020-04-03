@@ -62,7 +62,7 @@ router.delete("/:id", (req, res) => {
     const { id } = req.params
 
     events
-        .delete(id)
+        .remove(id)
         .then(event => {
             res.json(event)
         })
