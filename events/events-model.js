@@ -13,7 +13,7 @@ const findById = id => {
 
 //CREATE
 
-const add = async event => {
+const add = async ev => {
     // db("events")
     //     .insert(event)
     //     .returning("*")
