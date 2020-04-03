@@ -13,13 +13,13 @@ const findById = id => {
 
 //CREATE
 
-const add = async ev => {
+const add = async djset => {
     // db("events")
     //     .insert(event)
     //     .returning("*")
 
     const [ev] = await db("events")
-        .insert(ev)
+        .insert(djset)
         .returning("*")
     return ev
 }
