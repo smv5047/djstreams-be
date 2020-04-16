@@ -2,9 +2,10 @@ const db = require("../data/db-config")
 
 //READ
 function find() {
-    let eventArray = db("events")
-    eventArray.event_start.sort()
-    return eventArray
+    // let eventArray = db("events")
+    // eventArray.event_start.sort()
+    // return eventArray
+    return db("events")
 }
 
 const findById = (id) => {
