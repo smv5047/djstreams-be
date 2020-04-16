@@ -21,7 +21,6 @@ router.get("/", (req, res) => {
     events
         .find()
         .then((event) => {
-            event.event_start.sort()
             res.json(event)
         })
         .catch((err) => {

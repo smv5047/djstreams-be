@@ -2,43 +2,36 @@ const db = require("../data/db-config")
 
 //READ
 function find() {
-    return db("events")
+    let eventArray = db("events")
+    eventArray.event_start.sort()
+    return eventArray
 }
 
-const findById = id => {
-    return db("events")
-        .where({ id })
-        .first()
+const findById = (id) => {
+    return db("events").where({ id }).first()
 }
 
 //CREATE
 
-const add = async djset => {
+const add = async (djset) => {
     // db("events")
     //     .insert(event)
     //     .returning("*")
 
-    const [ev] = await db("events")
-        .insert(djset)
-        .returning("*")
+    const [ev] = await db("events").insert(djset).returning("*")
     return ev
 }
 
 //UPDATE
 
 function update(id, update) {
-    return db("events")
-        .where({ id })
-        .update({ update })
-        .returning("*")
+    return db("events").where({ id }).update({ update }).returning("*")
 }
 
 //DELETE
 
 function remove(id) {
-    return db("events")
-        .where({ id })
-        .delete()
+    return db("events").where({ id }).delete()
 }
 
 module.exports = {
