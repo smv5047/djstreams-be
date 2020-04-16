@@ -20,10 +20,11 @@ router.post("/", async (req, res, next) => {
 router.get("/", (req, res) => {
     events
         .find()
-        .then(event => {
+        .then((event) => {
+            event.event_start.sort()
             res.json(event)
         })
-        .catch(err => {
+        .catch((err) => {
             res.status(500).json({ message: "Failed to get events" })
         })
 })
@@ -33,10 +34,10 @@ router.get("/:id", (req, res) => {
 
     events
         .findById(id)
-        .then(event => {
+        .then((event) => {
             res.json(event)
         })
-        .catch(err => {
+        .catch((err) => {
             res.status(500).json({ message: "Failed to get events" })
         })
 })
@@ -48,10 +49,10 @@ router.put("/:id", (req, res) => {
 
     events
         .update(id)
-        .then(event => {
+        .then((event) => {
             res.json(event)
         })
-        .catch(err => {
+        .catch((err) => {
             res.status(500).json({ message: "Failed to get events" })
         })
 })
@@ -63,10 +64,10 @@ router.delete("/:id", (req, res) => {
 
     events
         .remove(id)
-        .then(event => {
+        .then((event) => {
             res.json(event)
         })
-        .catch(err => {
+        .catch((err) => {
             res.status(500).json({ message: "Failed to get events" })
         })
 })
