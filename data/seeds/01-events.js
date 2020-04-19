@@ -1,8 +1,8 @@
-exports.seed = function(knex) {
+exports.seed = function (knex) {
     // Deletes ALL existing entries
     return knex("events")
         .del()
-        .then(function() {
+        .then(function () {
             // Inserts seed entries
             return knex("events").insert([
                 {
@@ -11,7 +11,8 @@ exports.seed = function(knex) {
                     head_bops: 3,
                     event_platform: "Youtube",
                     isVideo: true,
-                    link: "https://www.youtube.com/watch?v=0zK2m8KSjjs"
+                    link: "https://www.youtube.com/watch?v=0zK2m8KSjjs",
+                    artist: "Kaskade"
                 },
                 {
                     id: 2,
@@ -19,7 +20,8 @@ exports.seed = function(knex) {
                     head_bops: 1,
                     event_platform: "Twitch",
                     isVideo: false,
-                    link: "www.google.com"
+                    link: "www.google.com",
+                    artist: "Solomun"
                 },
                 {
                     id: 3,
@@ -27,7 +29,8 @@ exports.seed = function(knex) {
                     head_bops: 0,
                     event_platform: "Other",
                     isVideo: false,
-                    link: "www.espn.com"
+                    link: "www.espn.com",
+                    artist: "Maceo Plex"
                 }
             ])
         })
