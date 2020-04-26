@@ -5,7 +5,10 @@ function find() {
     // let eventArray = db("events")
     // eventArray.event_start.sort()
     // return eventArray
-    return db("events")
+    let currentTime = new Date()
+    return db("events").where(function () {
+        this.where("event_end", ">", currentTime)
+    })
 }
 
 const findById = (id) => {
