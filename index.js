@@ -2,7 +2,6 @@ const dotenv = require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 
-//Create a server instance
 const server = express()
 
 //Routers
