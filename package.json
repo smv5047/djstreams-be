@@ -19,6 +19,7 @@
     },
     "homepage": "https://github.com/smv5047/djstreams-be#readme",
     "dependencies": {
+        "apify": "^0.21.0",
         "cors": "^2.8.5",
         "cross-env": "^7.0.2",
         "dotenv": "^8.2.0",
